@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\UnidadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/clientes',[ClienteController::class, 'index']);
+Route::get('/clientes/unidades/{cliente_id}',[UnidadController::class,'getByClient']);
